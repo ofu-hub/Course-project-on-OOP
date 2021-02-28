@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.14.0, 2021-02-27T20:41:53. -->
+<!-- Written by QtCreator 4.14.0, 2021-02-28T14:56:11. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -71,7 +71,7 @@
     <value type="QString">-fno-delayed-template-parsing</value>
    </valuelist>
    <value type="bool" key="ClangCodeModel.UseGlobalConfig">false</value>
-   <value type="QString" key="ClangCodeModel.WarningConfigId">{51fe5fc7-a82f-4a5c-b372-553d1c67c0ff}</value>
+   <value type="QString" key="ClangCodeModel.WarningConfigId">Builtin.Questionable</value>
    <valuemap type="QVariantMap" key="ClangTools">
     <value type="bool" key="ClangTools.AnalyzeOpenFiles">true</value>
     <value type="bool" key="ClangTools.BuildBeforeAnalysis">true</value>
@@ -294,8 +294,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:G:/CurseWork/CurseWork/CurseWork.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">G:/CurseWork/CurseWork/CurseWork.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">CurseWork2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:G:/GitHub/Course-project-on-OOP/CurseWork/CurseWork/CurseWork.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">G:/GitHub/Course-project-on-OOP/CurseWork/CurseWork/CurseWork.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>

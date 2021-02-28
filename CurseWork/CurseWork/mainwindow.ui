@@ -246,9 +246,9 @@ QPushButton:pressed {
     <widget class="QPushButton" name="pushButton_ch0">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>10</x>
        <y>180</y>
-       <width>71</width>
+       <width>141</width>
        <height>41</height>
       </rect>
      </property>
@@ -459,33 +459,6 @@ QPushButton:pressed {
       <string>6</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_etcch">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>180</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-	color: white;
-	background-color:rgb(38, 38, 38);
-	border: 1px solid gray;
-	border-radius: 2px;
-	font-size: 16px;
-}
-
-QPushButton:pressed {
-	background-color: rgb(53, 53, 53);
-	border-radius: 2px;
-}</string>
-     </property>
-     <property name="text">
-      <string>...</string>
-     </property>
-    </widget>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -549,39 +522,12 @@ QGroupBox::title  {
     <property name="title">
      <string>Знаменатель</string>
     </property>
-    <widget class="QPushButton" name="pushButton_etcz">
+    <widget class="QPushButton" name="pushButton_z0">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>180</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-	color: white;
-	background-color:rgb(38, 38, 38);
-	border: 1px solid gray;
-	border-radius: 2px;
-	font-size: 16px;
-}
-
-QPushButton:pressed {
-	background-color: rgb(53, 53, 53);
-	border-radius: 2px;
-}</string>
-     </property>
-     <property name="text">
-      <string>...</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_z0">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>180</y>
-       <width>71</width>
+       <width>141</width>
        <height>41</height>
       </rect>
      </property>
@@ -1110,9 +1056,9 @@ QPushButton:pressed {
     <widget class="QPushButton" name="pushButton_plus_minus">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>10</x>
        <y>150</y>
-       <width>71</width>
+       <width>106</width>
        <height>61</height>
       </rect>
      </property>
@@ -1137,9 +1083,9 @@ QPushButton:pressed {
     <widget class="QPushButton" name="pushButton_precent">
      <property name="geometry">
       <rect>
-       <x>150</x>
+       <x>115</x>
        <y>150</y>
-       <width>71</width>
+       <width>106</width>
        <height>61</height>
       </rect>
      </property>
@@ -1539,33 +1485,6 @@ QPushButton:pressed {
       <string>6</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_etc">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>150</y>
-       <width>71</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-	color: white;
-	background-color:rgb(38, 38, 38);
-	border: 1px solid gray;
-	border-radius: 2px;
-	font-size: 16px;
-}
-
-QPushButton:pressed {
-	background-color: rgb(53, 53, 53);
-	border-radius: 2px;
-}</string>
-     </property>
-     <property name="text">
-      <string>...</string>
-     </property>
-    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -1587,9 +1506,45 @@ QPushButton:pressed {
     <property name="title">
      <string>Меню</string>
     </property>
+    <addaction name="action"/>
+    <addaction name="action_2"/>
+    <addaction name="separator"/>
+    <addaction name="action_4"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>О программе</string>
+    </property>
+    <addaction name="action_6"/>
    </widget>
    <addaction name="menu"/>
+   <addaction name="menu_2"/>
   </widget>
+  <action name="action">
+   <property name="text">
+    <string>Инструкция</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>Очистить поле ввывода</string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
+  <action name="action_5">
+   <property name="text">
+    <string>Справка</string>
+   </property>
+  </action>
+  <action name="action_6">
+   <property name="text">
+    <string>Автор</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
