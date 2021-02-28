@@ -3,6 +3,8 @@
 
 double numFirst = 0, numSecond = 0;
 
+Operations ops = None;
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -40,6 +42,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_minus, SIGNAL(clicked()), this, SLOT(math_operations()));
     connect(ui->pushButton_mul, SIGNAL(clicked()), this, SLOT(math_operations()));
     connect(ui->pushButton_div, SIGNAL(clicked()), this, SLOT(math_operations()));
+
     // Нужно для проверки, какая кнопка была нажата
     ui->pushButton_plus->setCheckable(true);
     ui->pushButton_minus->setCheckable(true);
@@ -105,59 +108,73 @@ void MainWindow::operations() {
 void MainWindow::math_operations() {
     QPushButton *button = (QPushButton *)sender(); // Обработаем кнопку.
 
-    numSecond = ui->label->text().toDouble(); // Возьмем второе число после выбора операции.
-
     QString new_label;
+
+    numSecond = ui->label->text().toDouble(); // Возьмем второе число после выбора операции.
 
     if (numFirst == 0) // Если у нас первое число равно 0, то возьмем для него след.
         numFirst = ui->label->text().toDouble();
     else { // Иначе нам надо запонить выбор. Пример: 5 + 5 (в памяти это равно 10, но мы не видим),
            //                                (выберем след операцию) - (выведется 10 и выберем число) 4 = 6.
-        double lNum = numFirst + numSecond;
+        double lNum = 0;
+        button->setChecked(true); // true на ту кнопку, которая нажата.
+        if(ui->pushButton_plus->isChecked()) {
+            lNum = numFirst + numSecond;
+            ui->pushButton_plus->setChecked(false);
+        }
+        else if(ui->pushButton_minus->isChecked()) {
+            lNum = numFirst - numSecond;
+            ui->pushButton_minus->setChecked(false);
+        }
+        else if(ui->pushButton_mul->isChecked()) {
+            lNum = numFirst * numSecond;
+            ui->pushButton_mul->setChecked(false);
+        }
+        else if(ui->pushButton_div->isChecked()) {
+            if (numSecond == 0) ui->label->setText("0");
+            else {
+                lNum = numFirst / numSecond;
+                ui->pushButton_div->setChecked(false);
+            }
+        }
         new_label = QString::number(lNum, 'g', 10);
         numFirst = lNum;
         ui->label->setText(new_label);
     }
-
-
-    button->setChecked(true); // true на ту кнопку, которая нажата.
+    button->setChecked(true);
 }
 
 // Арифметика.
 void MainWindow::on_pushButton_equally_clicked()
 {
-    double lNum;
+    double lNum = 0;
     QString new_label;
     numSecond = 0;
     numSecond = ui->label->text().toDouble();
+
     if(ui->pushButton_plus->isChecked()) {
         lNum = numFirst + numSecond;
         new_label = QString::number(lNum, 'g', 10);
-
-        ui->label->setText(new_label);
         ui->pushButton_plus->setChecked(false);
-    } else if (ui->pushButton_minus->isChecked()) {
+    }
+    else if (ui->pushButton_minus->isChecked()) {
         lNum = numFirst - numSecond;
-        new_label = QString::number(lNum, 'g', 10);
-
-        ui->label->setText(new_label);
         ui->pushButton_minus->setChecked(false);
-    } else if (ui->pushButton_mul->isChecked()) {
+    }
+    else if (ui->pushButton_mul->isChecked()) {
         lNum = numFirst * numSecond;
-        new_label = QString::number(lNum, 'g', 10);
-
-        ui->label->setText(new_label);
         ui->pushButton_mul->setChecked(false);
-    } else if (ui->pushButton_div->isChecked()) {
+    }
+    else if (ui->pushButton_div->isChecked()) {
         if (numSecond == 0) ui->label->setText("0");
         else {
             lNum = numFirst / numSecond;
-            new_label = QString::number(lNum, 'g', 10);
-
-            ui->label->setText(new_label);
+            ui->pushButton_div->setChecked(false);
         }
-        ui->pushButton_div->setChecked(false);
     }
+
+    new_label = QString::number(lNum, 'g', 10);
+    ui->label->setText(new_label);
     numFirst = 0;
 }
 

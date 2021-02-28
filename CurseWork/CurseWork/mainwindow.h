@@ -7,6 +7,14 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
+enum Operations {
+    None = -1,
+    Plus = 0,
+    Minus = 1,
+    Div = 2,
+    Mul = 3
+};
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
