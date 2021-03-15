@@ -13,6 +13,7 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    Fraction.h \
     mainwindow.h
 
 FORMS += \

@@ -1,7 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-double numFirst = 0, numSecond = 0;
+double numFirst = 0, numSecond = 0; // Для хранения либо целого числа или дробного.
+double zFirst = 0, zSecond = 0;     // Для знаменателей.
+double chFirst = 0, chSecond = 0;   // Для числителей.
 
 bool flagInputDig = false; // while label.text = 0 => flag = false;
 
@@ -73,9 +75,6 @@ void MainWindow::digits_numbers() {
                             // После выбора операции вводим новое число и тогда label чиститься.
     QPushButton *button = (QPushButton *)sender(); // Обрабатываем нажатие кннопки.
 
-    if (ui->label->text() != "0") flagInputDig = true;
-    else flagInputDig = false;
-
     double all_numbers;
     QString new_label;
 
@@ -83,6 +82,11 @@ void MainWindow::digits_numbers() {
     new_label = QString::number(all_numbers, 'g', 10);
 
     ui->label->setText(new_label);
+
+    if (ui->label->text() != "0")
+        flagInputDig = true;
+    else
+        flagInputDig = false;
 }
 
 // Обратабываем дробные числа (знаменатель)
@@ -124,8 +128,7 @@ void MainWindow::ch_numbers() {
 }
 
 // Кнопка точки :)
-void MainWindow::on_pushButton_dot_clicked()
-{
+void MainWindow::on_pushButton_dot_clicked() {
     if(!(ui->label->text().contains('.'))) // Если точка уже есть в тексте, то зачем её вводить снова?
         ui->label->setText(ui->label->text() + ".");
 }
@@ -153,8 +156,7 @@ void MainWindow::operations() {
 }
 
 // Очистка всего.
-void MainWindow::on_pushButton_AC_clicked()
-{
+void MainWindow::on_pushButton_AC_clicked() {
     flagInputDig = false;
 
     ui->pushButton_plus->setChecked(false);
@@ -171,12 +173,15 @@ void MainWindow::on_pushButton_AC_clicked()
     ui->labelCH->setText("0");
 
     numFirst = 0;
+    zFirst = 0;
+    chFirst = 0;
     numSecond = 0;
+    zSecond = 0;
+    chSecond = 0;
 }
 
 // Очистка лишь символа. Может ввели что-то не то?
-void MainWindow::on_pushButton_C_clicked()
-{
+void MainWindow::on_pushButton_C_clicked() {
     QString text = ui->label->text();
     text.chop(1);
     if (text.isEmpty()) {
@@ -187,8 +192,7 @@ void MainWindow::on_pushButton_C_clicked()
 }
 
 // Очистка лишь символа. (числитель)
-void MainWindow::on_pushButton_chC_clicked()
-{
+void MainWindow::on_pushButton_chC_clicked() {
     QString textN = ui->label->text();
     QString text = ui->labelCH->text();
     QString text2 = ui->labelZ->text();
@@ -207,8 +211,7 @@ void MainWindow::on_pushButton_chC_clicked()
 }
 
 // Очистка лишь символа. (знаменатель)
-void MainWindow::on_pushButton_zC_clicked()
-{
+void MainWindow::on_pushButton_zC_clicked() {
     QString textN = ui->label->text();
     QString text = ui->labelZ->text();
     QString text2 = ui->labelCH->text();
@@ -227,8 +230,7 @@ void MainWindow::on_pushButton_zC_clicked()
 }
 
 // Кнопка точки. (знаменатель)
-void MainWindow::on_pushButton_dotZ_clicked()
-{
+void MainWindow::on_pushButton_dotZ_clicked() {
     ui->label->setGeometry(10, 0, 451, 71);
     ui->labelZ->setEnabled(true);
     ui->labelCH->setEnabled(true);
@@ -237,8 +239,7 @@ void MainWindow::on_pushButton_dotZ_clicked()
 }
 
 // Кнопка точки. (числитель)
-void MainWindow::on_pushButton_dotCH_clicked()
-{
+void MainWindow::on_pushButton_dotCH_clicked() {
     ui->label->setGeometry(10, 0, 451, 71);
     ui->labelZ->setEnabled(true);
     ui->labelCH->setEnabled(true);
@@ -253,20 +254,105 @@ void MainWindow::on_action_triggered()
 }
 
 // Очистка всего через меню.
-void MainWindow::on_action_AC_triggered()
-{
+void MainWindow::on_action_AC_triggered() {
     on_pushButton_AC_clicked();
 }
 
-void MainWindow::on_action_Exit_triggered()
-{
+// Выход через меню.
+void MainWindow::on_action_Exit_triggered() {
     qApp->quit();
 }
 
-void MainWindow::on_action_Author_triggered()
-{
+// Автор.
+void MainWindow::on_action_Author_triggered() {
     QMessageBox msgBox;
     msgBox.setText("Автор - Булатов Павел\nОбратная связь: example@text.com\nGitHub: github.com/ofu-hub");
     msgBox.setWindowTitle("Автор");
     msgBox.exec();
+}
+
+// Если у нас есть целое число, знаменатель и числитель и мы хотим перевести его в дробь (знаменатель и числитель не пустые)
+// или же когда хотим совершить операцию с другой дробью.
+void MainWindow::calcIfIntFloat() {
+//    double iNum = ui->label->text().toDouble();
+//    double chNum = ui->labelCH->text().toDouble();
+//    double zNum = ui->labelZ->text().toDouble();
+
+//    // Если знаменатель дроби равен 0, то ...
+//    if (ui->labelZ->text() == "0") {
+//        on_pushButton_AC_clicked();
+//        ui->label->setText("Деление на 0!");
+//    } // Иначе всё ок!
+//    else {
+//        double result = (iNum * zNum) + chNum;
+
+//        QString new_label;
+//        new_label = QString::number(result, 'g', 10);
+
+//        ui->labelCH->setText(new_label);
+//        ui->label->setText("");
+
+//        if (numFirst == 0) numFirst = result / zNum;
+//        else numSecond = result / zNum;
+//    }
+}
+
+// Арифметические операции.
+void MainWindow::math_operations() {
+//    // Берём операцию. (запоминаем)
+//    QPushButton *button = (QPushButton *)sender(); // Обрабатываем нажатие кннопки.
+//    // Для начала запишем первое число. Проверим есть ли оно вообще.
+//    if (numFirst == 0) {
+//        // Если у нас есть числитель и знаменатель, то подсчитаем его сразу.
+//        if ((ui->labelZ->text() != "") && (ui->labelCH->text() != "")) {
+//            calcIfIntFloat();
+//            zFirst = ui->labelZ->text().toDouble();
+//            chFirst = ui->labelCH->text().toDouble();
+//        }
+//        else // Если нету, значит по сути считаем целые числа
+//            numFirst = ui->label->text().toDouble();
+
+//        ui->label->setGeometry(10, 0, 531, 71);
+//        ui->labelZ->setEnabled(false);
+//        ui->labelCH->setEnabled(false);
+
+//        ui->labelZ->setText("0");
+//        ui->labelCH->setText("0");
+//    }
+//    else {
+//        button->setChecked(true); // Операция.
+//        // Тоже самое.
+//        // Если у нас есть числитель и знаменатель, то подсчитаем его сразу.
+//        if ((ui->labelZ->text() != "") && (ui->labelCH->text() != "")) {
+//            calcIfIntFloat();
+//            zSecond = ui->labelZ->text().toDouble();
+//            chSecond = ui->labelCH->text().toDouble();
+//        }
+//        else // Если нету, значит по сути считаем целые числа
+//            numSecond = ui->label->text().toDouble();
+//    }
+
+}
+
+// Равно.
+void MainWindow::on_pushButton_equally_clicked() {
+//    double labelNum, zN, chN;
+//    QString new_label;
+
+//    if(ui->pushButton_plus->isChecked()) {
+//        if ((ui->labelZ->text() != "") && (ui->labelCH->text() != "")) {
+//            zN = zFirst * zSecond;
+//            chN = ((zN / zFirst) * chFirst) + ((zN / zSecond) * chSecond);
+
+//            new_label = QString::number(zN, 'g', 5);
+//            ui->labelZ->setText(new_label);
+
+//            new_label = QString::number(chN, 'g', 5);
+//            ui->labelCH->setText(new_label);
+
+//            ui->label->setGeometry(10, 0, 451, 71);
+//            ui->pushButton_plus->setChecked(false);
+//        }
+//    }
+//    // if ((ui->labelZ->text() != "") && (ui->labelCH->text() != "")) calcIfIntFloat();
 }

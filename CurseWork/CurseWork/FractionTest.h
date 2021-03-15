@@ -1,0 +1,4 @@
+#ifndef FRACTIONTEST_H
+#define FRACTIONTEST_H
+
+#endif // FRACTIONTEST_H

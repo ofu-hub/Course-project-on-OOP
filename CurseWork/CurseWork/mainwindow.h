@@ -23,6 +23,7 @@ private slots:
     void digits_numbers();
     void on_pushButton_dot_clicked();
     void operations();
+    void math_operations();
     void on_pushButton_AC_clicked();
     void on_pushButton_C_clicked();
     void z_numbers();
@@ -35,5 +36,8 @@ private slots:
     void on_action_AC_triggered();
     void on_action_Exit_triggered();
     void on_action_Author_triggered();
+    void on_pushButton_equally_clicked();
+
+    void calcIfIntFloat();
 };
 #endif // MAINWINDOW_H
