@@ -10,11 +10,14 @@
 // Считаем и выводим дробь в label (to string and return.. logic lol).
 
 class Fraction {
+private:
+    double num; // Числитель
+    double div; // Знаменатель
+
 public:
     Fraction() = default;
     Fraction(double n, double d);
     Fraction(const Fraction& frac);
-    ~Fraction();
 
     double getNum();
     double getDiv();
@@ -23,12 +26,12 @@ public:
     void setDiv(double d);
 
     // Переводит смешанную дробь в обычную дробную.
-    void transform(double ch, const Fraction& frac);
+    void transform(double ch, Fraction& frac);
 
-    friend Fraction operator+(Fraction &other);
-    friend Fraction operator-(Fraction &other);
-    friend Fraction operator*(Fraction &first, Fraction &second);
-    friend Fraction operator/(Fraction &first, Fraction &second);
+    Fraction operator+(const Fraction &other);
+    Fraction operator-(const Fraction &other);
+    Fraction operator*(const Fraction &other);
+    Fraction operator/(const Fraction &other);
 };
 
 #endif // FRACTION_H
