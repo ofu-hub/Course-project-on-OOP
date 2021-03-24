@@ -37,7 +37,5 @@ private slots:
     void on_action_Exit_triggered();
     void on_action_Author_triggered();
     void on_pushButton_equally_clicked();
-
-    void calcIfIntFloat();
 };
 #endif // MAINWINDOW_H
