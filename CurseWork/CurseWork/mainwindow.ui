@@ -33,8 +33,17 @@
   </property>
   <property name="styleSheet">
    <string notr="true">font: 8pt &quot;Lucida Sans Unicode&quot;;
-color: white;
-background-color: rgb(53, 53, 53);</string>
+color: black;
+background-color: white;</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>512</width>
+    <height>512</height>
+   </size>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="groupBox">
@@ -83,8 +92,7 @@ QGroupBox::title  {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -119,8 +127,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -155,8 +162,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -191,8 +197,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -227,8 +232,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -263,8 +267,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -299,8 +302,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -335,8 +337,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -371,8 +372,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -407,8 +407,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -443,8 +442,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -479,8 +477,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -581,8 +578,7 @@ QGroupBox::title  {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -617,8 +613,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -653,8 +648,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -689,8 +683,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -725,8 +718,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -761,8 +753,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -797,8 +788,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -833,8 +823,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -869,8 +858,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -905,8 +893,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -941,8 +928,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -977,8 +963,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -1032,7 +1017,7 @@ QGroupBox::title  {
      <property name="styleSheet">
       <string notr="true">QPushButton {
 	color: black;
-	background-color:rgb(191, 191, 191);
+	background-color:rgb(203, 203, 203);
 	border: 1px solid gray;
 	font-size: 16px;
 	border-radius: 2px;
@@ -1058,7 +1043,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
+	color: rgb(35, 35, 35);
 	background-color:rgb(255, 166, 42);
 	border: 1px solid gray;
 	border-radius: 2px;
@@ -1085,7 +1070,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
+	color: rgb(35, 35, 35);
 	background-color:rgb(255, 166, 42);
 	border: 1px solid gray;
 	border-radius: 2px;
@@ -1112,8 +1097,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -1139,8 +1123,8 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgb(38, 38, 38);
+	color: black;
+	background-color:rgb(203, 203, 203);
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -1166,8 +1150,8 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgb(38, 38, 38);
+	color: black;
+	background-color:rgb(203, 203, 203);
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -1193,7 +1177,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
+	color: rgb(35, 35, 35);
 	background-color:rgb(255, 166, 42);
 	border: 1px solid gray;
 	border-radius: 2px;
@@ -1220,8 +1204,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -1247,8 +1230,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -1274,7 +1256,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
+	color: rgb(35, 35, 35);
 	background-color:rgb(255, 166, 42);
 	border: 1px solid gray;
 	border-radius: 2px;
@@ -1302,7 +1284,7 @@ QPushButton:pressed {
      <property name="styleSheet">
       <string notr="true">QPushButton {
 	color: black;
-	background-color:rgb(191, 191, 191);
+	background-color:rgb(203, 203, 203);
 	border: 1px solid gray;
 	font-size: 16px;
 	border-radius: 2px;
@@ -1328,8 +1310,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -1355,8 +1336,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -1382,8 +1362,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -1409,8 +1388,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -1436,8 +1414,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -1463,8 +1440,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -1490,7 +1466,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
+	color: rgb(35, 35, 35);
 	background-color:rgb(255, 166, 42);
 	border: 1px solid gray;
 	border-radius: 2px;
@@ -1517,8 +1493,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -1544,8 +1519,7 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	color: white;
-	background-color:rgbrgb(71, 71, 71);
+	color: black;
 	border: 1px solid gray;
 	border-radius: 2px;
 	font-size: 16px;
@@ -1581,7 +1555,7 @@ QPushButton:pressed {
 </string>
     </property>
     <property name="text">
-     <string>0</string>
+     <string/>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -1602,12 +1576,12 @@ QPushButton:pressed {
     <property name="styleSheet">
      <string notr="true">QLabel {
 	font-size: 12px;
-	border-bottom: 1px solid white;
+	border-bottom: 1px solid black;
 }
 </string>
     </property>
     <property name="text">
-     <string>0</string>
+     <string/>
     </property>
     <property name="textFormat">
      <enum>Qt::AutoText</enum>
@@ -1667,7 +1641,7 @@ QPushButton:pressed {
   </action>
   <action name="action_AC">
    <property name="text">
-    <string>Очистить поле ввывода</string>
+    <string>Очистить поле вывода</string>
    </property>
   </action>
   <action name="action_Exit">

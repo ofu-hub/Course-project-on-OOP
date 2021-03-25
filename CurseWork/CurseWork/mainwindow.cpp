@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
+    ui->setupUi(this);   
 
     // Обрабатываем нажатие целых чисел
     connect(ui->pushButton_0, SIGNAL(clicked()), this, SLOT(digits_numbers()));
@@ -169,8 +169,8 @@ void MainWindow::on_pushButton_AC_clicked() {
     ui->labelCH->setEnabled(false);
 
     ui->label->setText("0");
-    ui->labelZ->setText("0");
-    ui->labelCH->setText("0");
+    ui->labelZ->setText("");
+    ui->labelCH->setText("");
 
     numFirst = 0;
     numSecond = 0;
@@ -191,7 +191,6 @@ void MainWindow::on_pushButton_C_clicked() {
 void MainWindow::on_pushButton_chC_clicked() {
     QString textN = ui->label->text();
     QString text = ui->labelCH->text();
-    QString text2 = ui->labelZ->text();
     text.chop(1);
     if (text.isEmpty()) {
         if (ui->labelZ->text() == "0" && ui->labelCH->text() == "0") {
@@ -210,7 +209,6 @@ void MainWindow::on_pushButton_chC_clicked() {
 void MainWindow::on_pushButton_zC_clicked() {
     QString textN = ui->label->text();
     QString text = ui->labelZ->text();
-    QString text2 = ui->labelCH->text();
     text.chop(1);
     if (text.isEmpty()) {
         if (ui->labelZ->text() == "0" && ui->labelCH->text() == "0") {
@@ -289,8 +287,8 @@ void MainWindow::math_operations() {
     ui->labelCH->setEnabled(false);
 
     ui->label->setText("");
-    ui->labelZ->setText("0");
-    ui->labelCH->setText("0");
+    ui->labelZ->setText("");
+    ui->labelCH->setText("");
     button->setChecked(true); // Операция.
 
 }
@@ -322,6 +320,16 @@ void MainWindow::on_pushButton_equally_clicked() {
 
             ui->label->setGeometry(10, 0, 451, 71);
             ui->pushButton_plus->setChecked(false);
+            ui->label->setText("");
+        }
+        else if (ui->label->text() != "") {
+
+            double result = numFirst + numSecond;
+            new_label = QString::number(result, 'g', 5);
+            ui->label->setText(new_label);
+
+            ui->label->setGeometry(10, 0, 531, 71);
+            ui->pushButton_plus->setChecked(false);
         }
     }
     else if(ui->pushButton_minus->isChecked()) {
@@ -329,14 +337,33 @@ void MainWindow::on_pushButton_equally_clicked() {
 
             Fraction result = first - second;
 
-            new_label = QString::number(result.getDiv(), 'g', 5);
-            ui->labelZ->setText(new_label);
+            if (result.getNum() == 0 || result.getDiv() == 0) {
+                new_label = QString::number(0, 'g', 5);
+                ui->label->setText(new_label);
+                ui->label->setGeometry(10, 0, 531, 71);
+                ui->labelCH->setText("");
+                ui->labelZ->setText("");
+            }
+            else {
+                new_label = QString::number(result.getDiv(), 'g', 5);
+                ui->labelZ->setText(new_label);
 
-            new_label = QString::number(result.getNum(), 'g', 5);
-            ui->labelCH->setText(new_label);
+                new_label = QString::number(result.getNum(), 'g', 5);
+                ui->labelCH->setText(new_label);
 
-            ui->label->setGeometry(10, 0, 451, 71);
-            ui->pushButton_minus->setChecked(false);
+                ui->label->setGeometry(10, 0, 451, 71);
+                ui->pushButton_minus->setChecked(false);
+                ui->label->setText("");
+            }
+        }
+        else if (ui->label->text() != "") {
+
+            double result = numFirst - numSecond;
+            new_label = QString::number(result, 'g', 5);
+            ui->label->setText(new_label);
+
+            ui->label->setGeometry(10, 0, 531, 71);
+            ui->pushButton_plus->setChecked(false);
         }
     }
     else if(ui->pushButton_mul->isChecked()) {
@@ -352,6 +379,16 @@ void MainWindow::on_pushButton_equally_clicked() {
 
             ui->label->setGeometry(10, 0, 451, 71);
             ui->pushButton_mul->setChecked(false);
+            ui->label->setText("");
+        }
+        else if (ui->label->text() != "") {
+
+            double result = numFirst * numSecond;
+            new_label = QString::number(result, 'g', 5);
+            ui->label->setText(new_label);
+
+            ui->label->setGeometry(10, 0, 531, 71);
+            ui->pushButton_plus->setChecked(false);
         }
     }
     else if(ui->pushButton_div->isChecked()) {
@@ -367,9 +404,27 @@ void MainWindow::on_pushButton_equally_clicked() {
 
             ui->label->setGeometry(10, 0, 451, 71);
             ui->pushButton_div->setChecked(false);
+            ui->label->setText("");
+        }
+        else if (ui->label->text() != "") {
+
+            double result = numFirst / numSecond;
+
+            if (numFirst == 0 || numSecond == 0) {
+                new_label = "Деление на 0!";
+                ui->label->setText(new_label);
+                ui->label->setGeometry(10, 0, 531, 71);
+                ui->labelCH->setText("");
+                ui->labelZ->setText("");
+            }
+            else {
+                new_label = QString::number(result, 'g', 5);
+                ui->label->setText(new_label);
+
+                ui->label->setGeometry(10, 0, 531, 71);
+                ui->pushButton_plus->setChecked(false);
+            }
         }
     }
-
-    ui->label->setText("");
     // if ((ui->labelZ->text() != "") && (ui->labelCH->text() != "")) calcIfIntFloat();
 }
