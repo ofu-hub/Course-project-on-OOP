@@ -29,9 +29,13 @@ public:
     void transform(double ch, Fraction& frac);
 
     Fraction operator+(const Fraction &other);
+    Fraction operator+(double n);
     Fraction operator-(const Fraction &other);
+    Fraction operator-(double n);
     Fraction operator*(const Fraction &other);
+    Fraction operator*(double n);
     Fraction operator/(const Fraction &other);
+    Fraction operator/(double n);
 };
 
 #endif // FRACTION_H

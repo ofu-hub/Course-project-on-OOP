@@ -33,6 +33,7 @@ void Fraction::transform(double ch, Fraction& frac) {
 }
 
 // --- operators ---
+// frac + frac;
 Fraction Fraction::operator+ (const Fraction &other) {
     Fraction temp;
     if (other.div == div) {
@@ -47,7 +48,17 @@ Fraction Fraction::operator+ (const Fraction &other) {
     // ... сокращение (?)
     return temp;
 }
+// frac + num;
+Fraction Fraction::operator+ (double n) {
+    Fraction temp;
+    temp.div = this->div * 1;
+    temp.num = (temp.div / this->div) * this->num;
+    temp.num += (temp.div / 1) * n;
+    // ... сокращение (?)
+    return temp;
+}
 
+// frac - frac;
 Fraction Fraction::operator- (const Fraction &other) {
     Fraction temp;
     if (other.div == div) {
@@ -62,7 +73,17 @@ Fraction Fraction::operator- (const Fraction &other) {
     // ... сокращение (?)
     return temp;
 }
+// frac - num;
+Fraction Fraction::operator- (double n) {
+    Fraction temp;
+    temp.div = this->div * 1;
+    temp.num = (temp.div / this->div) * this->num;
+    temp.num -= (temp.div / 1) * n;
+    // ... сокращение (?)
+    return temp;
+}
 
+// frac * frac;
 Fraction Fraction::operator* (const Fraction &other) {
     Fraction temp;
     temp.num = this->num * other.num;
@@ -70,11 +91,28 @@ Fraction Fraction::operator* (const Fraction &other) {
     // ... сокращение (?)
     return temp;
 }
+// frac * num;
+Fraction Fraction::operator* (double n) {
+    Fraction temp;
+    temp.num = this->num * n;
+    temp.div = this->div;
+    // ... сокращение (?)
+    return temp;
+}
 
+// frac / frac;
 Fraction Fraction::operator/ (const Fraction &other) {
     Fraction temp;
-    temp.num = this->div / other.div;
-    temp.div = this->num / other.num;
+    temp.num = this->div * other.num;
+    temp.div = this->num * other.div;
+    // ... сокращение (?)
+    return temp;
+}
+// frac / num;
+Fraction Fraction::operator/ (double n) {
+    Fraction temp;
+    temp.num = this->num;
+    temp.div = this->div * n;
     // ... сокращение (?)
     return temp;
 }

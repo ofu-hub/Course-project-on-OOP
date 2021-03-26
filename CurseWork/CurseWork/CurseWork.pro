@@ -11,14 +11,17 @@ CONFIG += c++11
 
 SOURCES += \
     Fraction.cpp \
+    helpwindow.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     Fraction.h \
+    helpwindow.h \
     mainwindow.h
 
 FORMS += \
+    helpwindow.ui \
     mainwindow.ui
 
 # Default rules for deployment.

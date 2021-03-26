@@ -1619,7 +1619,6 @@ QPushButton:pressed {
     <property name="title">
      <string>Меню</string>
     </property>
-    <addaction name="action"/>
     <addaction name="action_AC"/>
     <addaction name="separator"/>
     <addaction name="action_Exit"/>
@@ -1634,11 +1633,6 @@ QPushButton:pressed {
    <addaction name="menu"/>
    <addaction name="menu_2"/>
   </widget>
-  <action name="action">
-   <property name="text">
-    <string>Инструкция</string>
-   </property>
-  </action>
   <action name="action_AC">
    <property name="text">
     <string>Очистить поле вывода</string>
