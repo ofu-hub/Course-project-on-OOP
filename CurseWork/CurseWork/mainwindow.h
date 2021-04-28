@@ -33,13 +33,12 @@ private slots:
     void on_pushButton_zC_clicked();
     void on_pushButton_dotZ_clicked();
     void on_pushButton_dotCH_clicked();
-    void on_action_triggered();
     void on_action_AC_triggered();
     void on_action_Exit_triggered();
     void on_action_Author_triggered();
     void on_pushButton_equally_clicked();
 
-    void toFraction(double &n);
     void on_action_Info_triggered();
+    void on_action_ChangeOutput_triggered();
 };
 #endif // MAINWINDOW_H

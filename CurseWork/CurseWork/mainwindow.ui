@@ -1619,6 +1619,7 @@ QPushButton:pressed {
     <property name="title">
      <string>Меню</string>
     </property>
+    <addaction name="action_ChangeOutput"/>
     <addaction name="action_AC"/>
     <addaction name="separator"/>
     <addaction name="action_Exit"/>
@@ -1651,6 +1652,11 @@ QPushButton:pressed {
   <action name="action_Info">
    <property name="text">
     <string>Справка</string>
+   </property>
+  </action>
+  <action name="action_ChangeOutput">
+   <property name="text">
+    <string>Сменить отображение вывода</string>
    </property>
   </action>
  </widget>

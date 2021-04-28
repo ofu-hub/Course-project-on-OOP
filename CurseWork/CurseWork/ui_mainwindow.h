@@ -25,11 +25,11 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
-    QAction *action;
     QAction *action_AC;
     QAction *action_Exit;
     QAction *action_Author;
     QAction *action_Info;
+    QAction *action_ChangeOutput;
     QWidget *centralwidget;
     QGroupBox *groupBox;
     QPushButton *pushButton_ch9;
@@ -99,8 +99,6 @@ public:
 "background-color: white;"));
         MainWindow->setIconSize(QSize(512, 512));
         MainWindow->setDocumentMode(false);
-        action = new QAction(MainWindow);
-        action->setObjectName(QString::fromUtf8("action"));
         action_AC = new QAction(MainWindow);
         action_AC->setObjectName(QString::fromUtf8("action_AC"));
         action_Exit = new QAction(MainWindow);
@@ -109,6 +107,8 @@ public:
         action_Author->setObjectName(QString::fromUtf8("action_Author"));
         action_Info = new QAction(MainWindow);
         action_Info->setObjectName(QString::fromUtf8("action_Info"));
+        action_ChangeOutput = new QAction(MainWindow);
+        action_ChangeOutput->setObjectName(QString::fromUtf8("action_ChangeOutput"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         groupBox = new QGroupBox(centralwidget);
@@ -864,7 +864,7 @@ public:
 
         menubar->addAction(menu->menuAction());
         menubar->addAction(menu_2->menuAction());
-        menu->addAction(action);
+        menu->addAction(action_ChangeOutput);
         menu->addAction(action_AC);
         menu->addSeparator();
         menu->addAction(action_Exit);
@@ -879,11 +879,11 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "\320\232\320\260\320\273\321\214\320\272\321\203\320\273\321\217\321\202\320\276\321\200 \320\264\321\200\320\276\320\261\320\275\321\213\321\205 \321\207\320\270\321\201\320\265\320\273", nullptr));
-        action->setText(QCoreApplication::translate("MainWindow", "\320\230\320\275\321\201\321\202\321\200\321\203\320\272\321\206\320\270\321\217", nullptr));
         action_AC->setText(QCoreApplication::translate("MainWindow", "\320\236\321\207\320\270\321\201\321\202\320\270\321\202\321\214 \320\277\320\276\320\273\320\265 \320\262\321\213\320\262\320\276\320\264\320\260", nullptr));
         action_Exit->setText(QCoreApplication::translate("MainWindow", "\320\222\321\213\321\205\320\276\320\264", nullptr));
         action_Author->setText(QCoreApplication::translate("MainWindow", "\320\220\320\262\321\202\320\276\321\200", nullptr));
         action_Info->setText(QCoreApplication::translate("MainWindow", "\320\241\320\277\321\200\320\260\320\262\320\272\320\260", nullptr));
+        action_ChangeOutput->setText(QCoreApplication::translate("MainWindow", "\320\241\320\274\320\265\320\275\320\270\321\202\321\214 \320\276\321\202\320\276\320\261\321\200\320\260\320\266\320\265\320\275\320\270\320\265 \320\262\321\213\320\262\320\276\320\264\320\260", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "\320\247\320\270\321\201\320\273\320\270\321\202\320\265\320\273\321\214", nullptr));
         pushButton_ch9->setText(QCoreApplication::translate("MainWindow", "9", nullptr));
         pushButton_ch5->setText(QCoreApplication::translate("MainWindow", "5", nullptr));

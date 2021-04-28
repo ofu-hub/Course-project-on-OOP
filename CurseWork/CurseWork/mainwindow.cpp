@@ -8,6 +8,7 @@ Fraction first, second;
 bool flagInputDig = false; // while label.text = 0 => flag = false;
 bool flagFPI_fir = false; // Если true, значит мы считаем (пример: 1/2 + 2);
 bool flagFPI_sec = false;
+bool flagOutputReal = false; // Если true, значит вместо дроби выводим вещественное число;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -234,6 +235,7 @@ void MainWindow::on_pushButton_zC_clicked() {
 
 // Кнопка точки. (знаменатель)
 void MainWindow::on_pushButton_dotZ_clicked() {
+    if (flagInputDig == false) ui->label->setText("");
     ui->label->setGeometry(10, 0, 451, 71);
     ui->labelZ->setEnabled(true);
     ui->labelCH->setEnabled(true);
@@ -243,16 +245,12 @@ void MainWindow::on_pushButton_dotZ_clicked() {
 
 // Кнопка точки. (числитель)
 void MainWindow::on_pushButton_dotCH_clicked() {
+    if (flagInputDig == false) ui->label->setText("");
     ui->label->setGeometry(10, 0, 451, 71);
     ui->labelZ->setEnabled(true);
     ui->labelCH->setEnabled(true);
     if(!(ui->labelCH->text().contains('.'))) // Если точка уже есть в тексте, то зачем её вводить снова?
         ui->labelCH->setText(ui->labelCH->text() + ".");
-}
-
-// Инструкция.
-void MainWindow::on_action_triggered() {
-
 }
 
 // Очистка всего через меню.
@@ -303,12 +301,6 @@ void MainWindow::math_operations() {
 
 }
 
-// ...
-void MainWindow::toFraction(double &n) {
-
-}
-// ...
-
 // Равно.
 void MainWindow::on_pushButton_equally_clicked() {
     QString new_label;
@@ -324,6 +316,7 @@ void MainWindow::on_pushButton_equally_clicked() {
     else // Если нету, значит по сути считаем целые числа
         numSecond = ui->label->text().toDouble();
 
+    // Тригег кнопок арифметики
     if(ui->pushButton_plus->isChecked()) {
         if (flagFPI_fir == true && flagFPI_sec == false) {
             Fraction result = first + numSecond;
@@ -544,10 +537,39 @@ void MainWindow::on_pushButton_equally_clicked() {
             ui->pushButton_plus->setChecked(false);
         }
     }
+
+    // Если нам нужно выводить только вещ. числа
+    if (flagOutputReal == true && ui->label->text() != "") {
+        ui->label->setGeometry(10, 0, 531, 71);
+        double f = ui->labelCH->text().toDouble();
+        double s = ui->labelZ->text().toDouble();
+        double n = ui->label->text().toDouble();
+
+        n *= f/s;
+
+        new_label = QString::number(n, 'g', 9);
+        ui->label->setText(new_label);
+    }
+    else if (flagOutputReal == true) {
+        ui->label->setGeometry(10, 0, 531, 71);
+        double f = ui->labelCH->text().toDouble();
+        double s = ui->labelZ->text().toDouble();
+
+        f /= s;
+
+        new_label = QString::number(f, 'g', 9);
+        ui->label->setText(new_label);
+    }
 }
 
 void MainWindow::on_action_Info_triggered() {
     HelpWindow window;
     window.setModal(true);
     window.exec();
+}
+
+// Смена отображения вывода результата
+void MainWindow::on_action_ChangeOutput_triggered() {
+    if (flagOutputReal == false) flagOutputReal = true;
+    else flagOutputReal = false;
 }
