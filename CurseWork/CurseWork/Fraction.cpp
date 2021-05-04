@@ -28,8 +28,15 @@ void Fraction::setDiv(double d) {
 
 // Перевод смещанной дроби к обыкновенной.
 void Fraction::transform(double ch, Fraction& frac) {
-    // 1 * 1/2 => 1 * 2 + 1 => 3/2
-    frac.num += ch * frac.div;
+    // -5 * 1/2 => -(5/1 + 1/2) => -11/2
+    // 5 * 1/2 = 5/1 + 1/2 = 11/2
+    if (ch < 0) {
+        ch *= -1; // -5 => 5;
+        frac.num += ch * frac.div;
+        frac.num *= -1;
+    }
+    else frac.num += ch * frac.div;
+
 }
 
 // --- operators ---

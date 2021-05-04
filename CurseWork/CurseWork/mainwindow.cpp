@@ -347,6 +347,9 @@ void MainWindow::on_pushButton_equally_clicked() {
             flagFPI_sec = false;
         }
         else if (flagFPI_sec == true && flagFPI_fir == true) {
+            qDebug() << second.getDiv() << " " << second.getNum() << "\n";
+            qDebug() << first.getDiv() << " " << first.getNum() << "\n";
+
             Fraction result = second + first;
 
             new_label = QString::number(result.getDiv(), 'g', 6);
@@ -487,10 +490,10 @@ void MainWindow::on_pushButton_equally_clicked() {
             Fraction result = first / numSecond;
 
             new_label = QString::number(result.getDiv(), 'g', 6);
-            ui->labelZ->setText(new_label);
+            ui->labelCH->setText(new_label);
 
             new_label = QString::number(result.getNum(), 'g', 6);
-            ui->labelCH->setText(new_label);
+            ui->labelZ->setText(new_label);
 
             ui->label->setGeometry(10, 0, 451, 71);
             ui->pushButton_plus->setChecked(false);
@@ -502,10 +505,10 @@ void MainWindow::on_pushButton_equally_clicked() {
             Fraction result = Fraction(numFirst, 1) / second;
 
             new_label = QString::number(result.getDiv(), 'g', 6);
-            ui->labelZ->setText(new_label);
+            ui->labelCH->setText(new_label);
 
             new_label = QString::number(result.getNum(), 'g', 6);
-            ui->labelCH->setText(new_label);
+            ui->labelZ->setText(new_label);
 
             ui->label->setGeometry(10, 0, 451, 71);
             ui->pushButton_plus->setChecked(false);
@@ -516,10 +519,10 @@ void MainWindow::on_pushButton_equally_clicked() {
             Fraction result = first / second;
 
             new_label = QString::number(result.getDiv(), 'g', 6);
-            ui->labelZ->setText(new_label);
+            ui->labelCH->setText(new_label);
 
             new_label = QString::number(result.getNum(), 'g', 6);
-            ui->labelCH->setText(new_label);
+            ui->labelZ->setText(new_label);
 
             ui->label->setGeometry(10, 0, 451, 71);
             ui->pushButton_plus->setChecked(false);
@@ -545,7 +548,7 @@ void MainWindow::on_pushButton_equally_clicked() {
         double s = ui->labelZ->text().toDouble();
         double n = ui->label->text().toDouble();
 
-        n *= f/s;
+        n += f/s;
 
         new_label = QString::number(n, 'g', 9);
         ui->label->setText(new_label);
