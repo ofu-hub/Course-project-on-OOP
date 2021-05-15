@@ -3,7 +3,8 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
-#include <helpwindow.h>
+#include <QDebug>
+#include "dialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,14 +22,10 @@ private:
     Ui::MainWindow *ui;
 
 private slots:
-    void digits_numbers();
+
     void on_pushButton_dot_clicked();
-    void operations();
-    void math_operations();
     void on_pushButton_AC_clicked();
     void on_pushButton_C_clicked();
-    void z_numbers();
-    void ch_numbers();
     void on_pushButton_chC_clicked();
     void on_pushButton_zC_clicked();
     void on_pushButton_dotZ_clicked();
@@ -37,8 +34,14 @@ private slots:
     void on_action_Exit_triggered();
     void on_action_Author_triggered();
     void on_pushButton_equally_clicked();
-
     void on_action_Info_triggered();
     void on_action_ChangeOutput_triggered();
+
+    void changeOutput(); //
+    void z_numbers(); //
+    void ch_numbers(); //
+    void operations(); //
+    void math_operations(); //
+    void digits_numbers(); //
 };
 #endif // MAINWINDOW_H

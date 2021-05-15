@@ -1,4 +1,6 @@
-QT       += core gui xml
+QT       += core gui xml webenginewidgets webengine
+
+# webenginewidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -11,17 +13,17 @@ CONFIG += c++11
 
 SOURCES += \
     Fraction.cpp \
-    helpwindow.cpp \
+    dialog.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     Fraction.h \
-    helpwindow.h \
+    dialog.h \
     mainwindow.h
 
 FORMS += \
-    helpwindow.ui \
+    dialog.ui \
     mainwindow.ui
 
 # Default rules for deployment.

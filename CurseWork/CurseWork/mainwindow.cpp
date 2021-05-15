@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);   
+    ui->setupUi(this);
 
     // Обрабатываем нажатие целых чисел
     connect(ui->pushButton_0, SIGNAL(clicked()), this, SLOT(digits_numbers()));
@@ -542,15 +542,27 @@ void MainWindow::on_pushButton_equally_clicked() {
     }
 
     // Если нам нужно выводить только вещ. числа
+    changeOutput();
+}
+
+void MainWindow::changeOutput() {
+    QString new_label;
     if (flagOutputReal == true && ui->label->text() != "") {
         ui->label->setGeometry(10, 0, 531, 71);
         double f = ui->labelCH->text().toDouble();
         double s = ui->labelZ->text().toDouble();
         double n = ui->label->text().toDouble();
 
-        n += f/s;
+        if (n < 0) {
+            n *= -1; // -5 => 5;
+            f += n * s;
+            f *= -1;
+        }
+        else f += n * s;
 
-        new_label = QString::number(n, 'g', 9);
+        f /= s;
+
+        new_label = QString::number(f, 'g', 9);
         ui->label->setText(new_label);
     }
     else if (flagOutputReal == true) {
@@ -566,7 +578,7 @@ void MainWindow::on_pushButton_equally_clicked() {
 }
 
 void MainWindow::on_action_Info_triggered() {
-    HelpWindow window;
+    Dialog window;
     window.setModal(true);
     window.exec();
 }

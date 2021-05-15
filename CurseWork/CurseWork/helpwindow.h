@@ -2,19 +2,7 @@
 #define HELPWINDOW_H
 
 #include <QDialog>
-#include <QtCore>
-#include <QtGui>
-#include <QtXml>
-#include <QDebug>
-#include <QWidget>
-#include <QXmlStreamReader>
-#include <QTreeWidgetItem>
-#include <QStack>
-#include <QStringList>
-#include <QStringView>
-#include <QFile>
-#include <QDomDocument>
-#include <QStandardItem>
+#include <QtWebEngineWidgets>
 
 namespace Ui {
 class HelpWindow;
@@ -30,11 +18,7 @@ public:
 
 private:
     Ui::HelpWindow *ui;
-    QString Filename;
-    QStandardItemModel *model;
-
-    void ReadFile();
-    void ClickTree();
+    QWebEngineView *view;
 };
 
 #endif // HELPWINDOW_H

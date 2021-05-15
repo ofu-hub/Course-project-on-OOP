@@ -2,59 +2,42 @@
 <ui version="4.0">
  <class>HelpWindow</class>
  <widget class="QDialog" name="HelpWindow">
-  <property name="windowModality">
-   <enum>Qt::NonModal</enum>
-  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>592</width>
-    <height>378</height>
+    <width>657</width>
+    <height>320</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>592</width>
-    <height>378</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>592</width>
-    <height>378</height>
-   </size>
-  </property>
-  <property name="contextMenuPolicy">
-   <enum>Qt::DefaultContextMenu</enum>
-  </property>
-  <property name="acceptDrops">
-   <bool>false</bool>
-  </property>
   <property name="windowTitle">
-   <string>Справка</string>
+   <string>Dialog</string>
   </property>
-  <property name="inputMethodHints">
-   <set>Qt::ImhNone</set>
-  </property>
-  <property name="modal">
-   <bool>false</bool>
-  </property>
-  <widget class="QTreeView" name="treeView">
+  <widget class="QTreeWidget" name="treeWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>13</y>
-     <width>171</width>
-     <height>361</height>
+     <y>10</y>
+     <width>256</width>
+     <height>301</height>
     </rect>
    </property>
-   <property name="editTriggers">
-    <set>QAbstractItemView::NoEditTriggers</set>
+   <column>
+    <property name="text">
+     <string notr="true">1</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>10</y>
+     <width>381</width>
+     <height>301</height>
+    </rect>
    </property>
-   <attribute name="headerVisible">
-    <bool>false</bool>
-   </attribute>
+   <layout class="QGridLayout" name="gridLayout"/>
   </widget>
  </widget>
  <resources/>
