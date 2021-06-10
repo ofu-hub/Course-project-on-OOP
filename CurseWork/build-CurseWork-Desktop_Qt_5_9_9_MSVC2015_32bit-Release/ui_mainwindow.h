@@ -726,6 +726,7 @@ public:
 "	background-color: rgb(95, 95, 95);\n"
 "	border-radius: 2px;\n"
 "}"));
+        pushButton_0->setAutoDefault(false);
         pushButton_1 = new QPushButton(groupBox_3);
         pushButton_1->setObjectName(QStringLiteral("pushButton_1"));
         pushButton_1->setGeometry(QRect(10, 330, 71, 61));
@@ -875,6 +876,9 @@ public:
         menu_2->addAction(action_Info);
 
         retranslateUi(MainWindow);
+
+        pushButton_0->setDefault(false);
+
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi

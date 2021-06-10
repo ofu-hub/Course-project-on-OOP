@@ -29,7 +29,6 @@ private:
     QStandardItemModel *model;
 
     bool ReadFile();
-    void ClickTree();
 };
 
 #endif // DIALOG_H

@@ -267,7 +267,7 @@ void MainWindow::on_action_Exit_triggered() {
 void MainWindow::on_action_Author_triggered() {
     QMessageBox msgBox;
     msgBox.setTextFormat(Qt::RichText);
-    msgBox.setText("<p>Автор - Булатов Павел</p><p>Обратная связь: example@text.com</p><p>GitHub: <a href=https://github.com/ofu-hub>github.com/ofu-hub</a></p>");
+    msgBox.setText("<p>Автор - Булатов Павел</p><p>Обратная связь: pmarkelo77@gmail.com</p><p>GitHub: <a href=https://github.com/ofu-hub>github.com/ofu-hub</a></p>");
     msgBox.setWindowTitle("Автор");
     msgBox.exec();
 }
@@ -578,7 +578,6 @@ void MainWindow::changeOutput() {
 }
 
 void MainWindow::on_action_Info_triggered() {
-    Dialog window;
     window.setModal(true);
     window.exec();
 }
