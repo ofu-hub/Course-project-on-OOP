@@ -35,6 +35,7 @@ public:
         Dialog->resize(709, 320);
         Dialog->setMinimumSize(QSize(709, 320));
         Dialog->setMaximumSize(QSize(709, 320));
+        Dialog->setContextMenuPolicy(Qt::DefaultContextMenu);
         gridLayoutWidget = new QWidget(Dialog);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
         gridLayoutWidget->setGeometry(QRect(230, 10, 471, 301));
@@ -44,7 +45,7 @@ public:
         treeView = new QTreeView(Dialog);
         treeView->setObjectName(QStringLiteral("treeView"));
         treeView->setGeometry(QRect(10, 10, 221, 301));
-        treeView->setEditTriggers(QAbstractItemView::SelectedClicked);
+        treeView->setEditTriggers(QAbstractItemView::NoEditTriggers);
         treeView->header()->setVisible(false);
 
         retranslateUi(Dialog);
@@ -54,7 +55,7 @@ public:
 
     void retranslateUi(QDialog *Dialog)
     {
-        Dialog->setWindowTitle(QApplication::translate("Dialog", "Dialog", Q_NULLPTR));
+        Dialog->setWindowTitle(QApplication::translate("Dialog", "\320\241\320\277\321\200\320\260\320\262\320\272\320\260", Q_NULLPTR));
     } // retranslateUi
 
 };
