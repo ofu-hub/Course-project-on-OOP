@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Dialog_t {
-    QByteArrayData data[4];
-    char stringdata0[34];
+    QByteArrayData data[3];
+    char stringdata0[28];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,11 +33,10 @@ static const qt_meta_stringdata_Dialog_t qt_meta_stringdata_Dialog = {
     {
 QT_MOC_LITERAL(0, 0, 6), // "Dialog"
 QT_MOC_LITERAL(1, 7, 19), // "on_treeView_clicked"
-QT_MOC_LITERAL(2, 27, 0), // ""
-QT_MOC_LITERAL(3, 28, 5) // "index"
+QT_MOC_LITERAL(2, 27, 0) // ""
 
     },
-    "Dialog\0on_treeView_clicked\0\0index"
+    "Dialog\0on_treeView_clicked\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -55,10 +54,10 @@ static const uint qt_meta_data_Dialog[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   19,    2, 0x08 /* Private */,
+       1,    0,   19,    2, 0x08 /* Private */,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::QModelIndex,    3,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -69,10 +68,11 @@ void Dialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         Dialog *_t = static_cast<Dialog *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_treeView_clicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 0: _t->on_treeView_clicked(); break;
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
 const QMetaObject Dialog::staticMetaObject = {

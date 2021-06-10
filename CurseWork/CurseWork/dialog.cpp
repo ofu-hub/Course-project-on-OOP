@@ -47,6 +47,8 @@ Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
 {
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
+
     ui->setupUi(this);
     Filename = "./books.html";
     model = new QStandardItemModel(0,1,this);
